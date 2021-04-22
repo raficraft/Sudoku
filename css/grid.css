@@ -1,0 +1,62 @@
+.hidden{
+    display: none;
+}
+
+tbody{
+    border : 3px solid black;
+}
+
+.sudoku-game{
+    margin : 0 auto;
+}
+
+.game-line{
+    border-bottom: 1px solid #ccc;
+}
+.game-line:nth-child(3),.game-line:nth-child(6){
+    border-bottom: 1px solid black;
+}
+
+.game-col:nth-child(3),.game-col:nth-child(6){
+    border-right: 1px solid black;
+}
+
+.game-notes,.game-value{
+
+    width : min(calc(100vh/10),calc(100vw/10));
+    height : min(calc(100vh/10),calc(100vw/10));
+    border : none;
+    background-color: #efefef;
+
+}
+
+
+.game-value{
+    text-align: center;
+    font-size: min(5vh,5vw);
+    border-left : 1px solid #ccc;
+}
+
+.game-value:focus,.lighting-cell{
+    background-color: rgb(211, 232, 253);
+}
+
+.game-value:invalid,.invalid{
+    color : red;
+    background-color: rgb(255, 188, 188) !important;
+    border : 1px solid red;
+}
+
+.game-value:read-only{
+    color : rgb(0, 132, 255);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
