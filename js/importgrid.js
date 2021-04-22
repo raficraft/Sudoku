@@ -12,6 +12,7 @@ class ImportGrid{
     constructor(){
 
 
+        this.importGrid()
 
         const runGame = document.querySelector('#newGame')
 
@@ -72,28 +73,19 @@ class ImportGrid{
 
         for(let line = 0 ; line < 9 ; line++ ){
             for(let col = 0 ; col < 9 ; col++ ){
-                const val = ''
-    
-    
-    
+                const val = ''  
                     const coord= `${line}-${col}`
                     const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-                    cell.readOnly = true
                     cell.value = val
-    
-               
-    
+                        
             }
         }
 
     }
-    
-
 
 }
 
-const importGrid = new ImportGrid()
-importGrid.importGrid()
+new ImportGrid()
 
 
 

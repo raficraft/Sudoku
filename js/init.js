@@ -39,7 +39,6 @@ class init{
                 data-coord="${countLine}-${countCol}"
                 data-sugg>            
             </td>`
-
           }
 
           this.ElHTML += `</tr>`

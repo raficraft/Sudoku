@@ -19,10 +19,6 @@ class game extends init{
 
         this.allCell = document.querySelectorAll('.game-value')
 
-
-
-
-
         this.allCell.forEach(cell => {
 
 
@@ -128,116 +124,6 @@ class game extends init{
 
     }
 
-    checkLineAndCol(coord){
-
-        const splitCoord = coord.split('-')
-        const indexLine = splitCoord[0]
-        const indexCol = splitCoord[1]
-
-        const target = document.querySelector(`.game-value[data-coord="${coord}"]`) 
-        const targetValue = target.value 
-
-
-        console(`case d'origine ${coord} dont la valeur est ${targetValue}`);
-        console.log(`on check la ligne ${indexLine}`);
-        console.log(`on check la colonne ${indexCol}`);
-
-        
-       /*
-            const cellInvalid = document.querySelectorAll(`.invalid`)
-            cellInvalid.forEach(cell => {                
-                cell.classList.remove('invalid')
-                });
-       */
-
-
-        //On check la ligne de la cible
-
-        let checkLine = []
-
-
-        for(let countLine = 0; countLine < this.nbLine ; countLine++){
-
-                const coord = `${indexLine}-${countLine}`
-                const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-                const cellValue = cell.value.toString()
-
-                if(cellValue !== ''){
-                    if(!checkLine.includes(cellValue)){                    
-                        checkLine.push({coord : coord , val : cellValue}) 
-                    }
-    
-            }            
-        }
-
-        console.log(checkLine);
-        
-/*
-        checkLine.forEach(data => {
-
-            if(data.val === targetValue && Object.size(checkLine) >1){
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                cellInvalid.classList.add('invalid')
-                cellInvalid.dataset.lineInvalid = true
-            }else if( Object.size(checkLine) >1){
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                cellInvalid.classList.add('invalid')
-                cellInvalid.dataset.lineInvalid = true
-            }else if( Object.size(checkLine) === 1){
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                if(!cellInvalid.dataset.colInvalid || cellInvalid.dataset.colInvalid === false){
-                cellInvalid.classList.remove('invalid')
-                cellInvalid.dataset.lineInvalid = false
-                }
-                
-            }         
-        }); 
-*/
-
-
-       let checkCol = []
-
-
-        for(let countCol = 0; countCol < this.nbCol ; countCol++){
-
-                const coord = `${countCol}-${indexCol}`
-                const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-                const cellValue = cell.value.toString()
-
-                if(cellValue !== ''){
-                    if(!checkCol.includes(cellValue)){                    
-                        checkCol.push({coord : coord , val : cellValue}) 
-                    }
-                    console.log(cellValue);
-    
-            }            
-        }
-
-        
-
-        checkCol.forEach(data => {
-
-            if(data.val === targetValue && Object.size(checkCol) >1){
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                cellInvalid.classList.add('invalid')
-                cellInvalid.dataset.colInvalid = true
-            }else if( Object.size(checkCol) >1){
-
-                console.log('jfjfkjsjlkj');
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                cellInvalid.classList.add('invalid')
-                cellInvalid.dataset.colInvalid = true
-            }else if( Object.size(checkLine) ===1){
-                const cellInvalid = document.querySelector(`.game-value[data-coord="${data.coord}"]`)
-                if(!cellInvalid.dataset.lineInvalid || cellInvalid.dataset.lineInvalid === false){
-                cellInvalid.classList.remove('invalid')
-                cellInvalid.dataset.lineInvalid = false
-                }
-            }  
-
-        });
-
-    }
 
     checkGrid(coord){
 
@@ -401,27 +287,7 @@ class game extends init{
         }); 
     }
 
-    checkValidCol(coordY){
-/*
-        this.readAllCol(()=>{
-            const coord = `${this.countCol}-${this.countLine}`
-            const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-            const cellValue = cell.value.toString()
 
-            if(cellValue !== ''){
-                if(this.colCoordArray.includes(cellValue)){
-                    this.invalidColValue.push(coord)
-                }else{
-                    this.colCoordArray.push(cellValue)
-                }
-            }
-        })
-*/
-    }
-
-    checkValidSquare(value){
-        console.log('valid Square');
-    }
 
 }
 
