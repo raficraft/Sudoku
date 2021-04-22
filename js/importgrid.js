@@ -46,7 +46,6 @@ class ImportGrid{
     
         const levelContainer = document.querySelector('.level')
         levelContainer.textContent = level
-        console.log(level);
     
         //On affiche le niveau de difficulté
     

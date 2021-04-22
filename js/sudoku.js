@@ -73,7 +73,6 @@ export default class Sudoku{
                     if(val != null){
 
                         // Tester si le sudoku est encore valide
-                        console.log(this.isValid());
                         if(this.isValid()){
 
                             // Arrêter les recherches
@@ -81,13 +80,11 @@ export default class Sudoku{
                             cursor.start = "forward"
 
                         }else{
-                            console.log('WTF');
                             // Si le sudoku comporte une erreur 
                             // Continuer les recherches
                         }
 
                     }else{
-                        console.log('on recule');
                         // S'il n'y a plus de  possibilitées
                         // Arrêter les recherches
                         continueResearch = false
@@ -101,9 +98,7 @@ export default class Sudoku{
             }
         //Délai d'attente
         await new Promise (res => setTimeout(res,10))
-        console.log(cursor);
           
-        //console.log(continueResearch);
         //Tant que tu peux progresser
         }while(cursor.progress())
         

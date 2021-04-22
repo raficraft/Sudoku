@@ -151,7 +151,6 @@ class game extends init{
             sudoku.push(lineArray)
         }
 
-        console.log(sudoku);
 
         //Verfifier qu'il y est pas de doublon dans les lignes
         //Parcourir les lignes
