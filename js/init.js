@@ -49,7 +49,9 @@ class init{
         this.ElHTML += 
         `</tbody>
             <table>
-            <button id="resolve">Resolve</button>`
+            <div id="controlPanel" class="controlPanel">
+                <button id="resolve">Résoudre</button>
+            </div>`
 
         const target = document.querySelector('main')
         target.insertAdjacentHTML("beforebegin", this.ElHTML);

@@ -60,3 +60,29 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+
+
+.controlPanel{
+    display : flex;
+    justify-content: center;
+    padding : 1rem;
+    width : min(calc(100vh/10),calc(100vw/10));
+    margin : 0 auto;
+}
+
+button{
+    padding : 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color : white;
+    background-color: rgb(59, 143, 252);
+    border-radius : 5px;
+    transition : 0.3s;
+    cursor: pointer;
+}
+
+button:hover{
+
+    background-color: rgb(0, 107, 247);
+}
