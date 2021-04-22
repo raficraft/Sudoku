@@ -138,7 +138,7 @@ class game extends init{
         const targetValue = target.value 
 
 
-        console.log(`case d'origine ${coord} dont la valeur est ${targetValue}`);
+        console(`case d'origine ${coord} dont la valeur est ${targetValue}`);
         console.log(`on check la ligne ${indexLine}`);
         console.log(`on check la colonne ${indexCol}`);
 
