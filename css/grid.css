@@ -65,11 +65,14 @@ input[type=number] {
 
 .controlPanel{
     display : flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
     padding : 1rem;
-    width : min(calc(100vh/10),calc(100vw/10));
+    width : min(calc(100vh/10 * 9 + 4px),calc(100vw/10 *9 + 4px));
     margin : 0 auto;
 }
+
 
 button{
     padding : 1rem;
@@ -86,3 +89,11 @@ button:hover{
 
     background-color: rgb(0, 107, 247);
 }
+
+.level{
+    font-size: 1rem;
+    color: rgb(0, 107, 247);
+    font-weight: bold;
+}
+
+

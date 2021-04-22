@@ -50,7 +50,9 @@ class init{
         `</tbody>
             <table>
             <div id="controlPanel" class="controlPanel">
+                <button id="newGame">New Game</button>
                 <button id="resolve">Résoudre</button>
+                <p class="level"></p>
             </div>`
 
         const target = document.querySelector('main')

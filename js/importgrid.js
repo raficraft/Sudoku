@@ -1,59 +1,103 @@
 import Sudoku from'../js/sudoku.js'
 
+
 const randomNumber = nombreMax =>{
-   return Math.trunc(Math.random() * nombreMax + 1)
-    
-  
+    return Math.trunc(Math.random() * nombreMax + 1)
 }
 
-const importGrid = async () => {
+
+class ImportGrid{
 
 
-    /*
-     console.log(response);
-        if(response.ok === true){
-            const json = await response.json()
-            console.log(json)
-        }else{
-            console.log(`Fichier introuvable - erreur : ${response.status}`)
-        }
-    */
+    constructor(){
 
-    const data = await fetch('js/grid.json')
-        .then(response => {
-            if(response.ok === true){
-              return response.json()
-            }else{
-                return Promise.reject(`Fichier introuvable - erreur : ${response.status}`)
-            }
+
+
+        const runGame = document.querySelector('#newGame')
+
+        runGame.addEventListener('click',(e)=>{
+
+            importGrid.importGrid()
+            
         })
-
-    const gridNumber = randomNumber(data.length)
-
-    const sudoku = data[gridNumber - 1]
-    const grid = sudoku.grid
-
-    for(let line = 0 ; line < 9 ; line++ ){
-        for(let col = 0 ; col < 9 ; col++ ){
-            const val = grid[line][col]
-
-
-            if(val !== null){
-
-                const coord= `${line}-${col}`
-                const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-                cell.readOnly = true
-                cell.value = val
-
-            }
-
-        }
     }
 
-    const test = new Sudoku(grid)
-    test.isValid()
+
+    async importGrid(){
+
+        this.cleanGrid();
+ 
+
+        const data = await fetch('js/grid.json')
+            .then(response => {
+                if(response.ok === true){
+                  return response.json()
+                }else{
+                    return Promise.reject(`Fichier introuvable - erreur : ${response.status}`)
+                }
+            })
+    
+        const gridNumber = randomNumber(data.length)
+    
+        const sudoku = data[gridNumber - 1]
+        const grid = sudoku.grid
+        const level = `Level : ${sudoku.level}`
+    
+        const levelContainer = document.querySelector('.level')
+        levelContainer.textContent = level
+        console.log(level);
+    
+        //On affiche le niveau de difficulté
+    
+        for(let line = 0 ; line < 9 ; line++ ){
+            for(let col = 0 ; col < 9 ; col++ ){
+                const val = grid[line][col]
+    
+    
+                if(val !== null){
+    
+                    const coord= `${line}-${col}`
+                    const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
+                    cell.readOnly = true
+                    cell.value = val
+    
+                }
+    
+            }
+        }
+    
+    }
+
+    cleanGrid(){
+
+        for(let line = 0 ; line < 9 ; line++ ){
+            for(let col = 0 ; col < 9 ; col++ ){
+                const val = ''
+    
+    
+    
+                    const coord= `${line}-${col}`
+                    const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
+                    cell.readOnly = true
+                    cell.value = val
+    
+               
+    
+            }
+        }
+
+    }
+    
 
 
 }
 
-importGrid()
+const importGrid = new ImportGrid()
+importGrid.importGrid()
+
+
+
+
+
+
+
