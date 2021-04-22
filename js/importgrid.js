@@ -18,7 +18,7 @@ class ImportGrid{
 
         runGame.addEventListener('click',(e)=>{
 
-            importGrid.importGrid()
+            this.importGrid()
             
         })
     }
@@ -65,8 +65,7 @@ class ImportGrid{
                 }
     
             }
-        }
-    
+        }    
     }
 
     cleanGrid(){
@@ -76,13 +75,10 @@ class ImportGrid{
                 const val = ''  
                     const coord= `${line}-${col}`
                     const cell = document.querySelector(`.game-value[data-coord="${coord}"]`)
-                    cell.value = val
-                        
+                    cell.value = val                        
             }
         }
-
     }
-
 }
 
 new ImportGrid()
