@@ -1,5 +1,5 @@
-import SudokuCell from './sudokuCell.js'
-import SudokuCursor from './cursor.js'
+import SudokuCell from '../js/sudokuCell.js'
+import SudokuCursor from '../js/cursor.js'
 
 export default class Sudoku{
     constructor(grid){

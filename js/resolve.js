@@ -1,6 +1,6 @@
 //Importer le fichier sudoku
 
-import Sudoku from'./sudoku.js'
+import Sudoku from'../js/sudoku.js'
 
 class Resolve{
     constructor(){

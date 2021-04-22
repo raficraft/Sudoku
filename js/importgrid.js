@@ -1,4 +1,4 @@
-import Sudoku from'./sudoku.js'
+import Sudoku from'../js/sudoku.js'
 
 const randomNumber = nombreMax =>{
    return Math.trunc(Math.random() * nombreMax + 1)
