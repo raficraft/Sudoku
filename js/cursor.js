@@ -33,12 +33,10 @@ export default class SudokuCursor{
         }else{
             this.col +=1
         }
-
         return true
 
-
-
     }
+    
     moveBack(){
         
           // Si le curseur est au début du sudoku

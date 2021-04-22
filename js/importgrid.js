@@ -19,7 +19,7 @@ const importGrid = async () => {
         }
     */
 
-    const data = await fetch('../js/grid.json')
+    const data = await fetch('js/grid.json')
         .then(response => {
             if(response.ok === true){
               return response.json()
