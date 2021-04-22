@@ -1,7 +1,8 @@
 import Sudoku from'./sudoku.js'
 
 const randomNumber = nombreMax =>{
-    return Math.trunc(Math.random() * nombreMax + 1)
+   return Math.trunc(Math.random() * nombreMax + 1)
+    
   
 }
 
@@ -50,7 +51,6 @@ const importGrid = async () => {
     }
 
     const test = new Sudoku(grid)
-    console.log(test.isValid());
     test.isValid()
 
 

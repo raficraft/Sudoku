@@ -6,19 +6,13 @@ export default class SudokuCursor{
         this.col  = 0
         this.start = "forward"
 
-        console.log('ok curseur');
-
     }
 
     progress(){
 
-        console.error('yolo');
         if(this.start === "forward"){
-            console.log('avance');
             return this.moveForward()
-            debugger
         }else if(this.start === "backward"){
-            console.log('recule');
             return this.moveBack()
         }
     }
@@ -26,7 +20,6 @@ export default class SudokuCursor{
 
     moveForward(){
 
-        console.log('avance');
 
         // Si le curseur est au bout du sudoku
         if(this.line === 8 && this.col === 8){

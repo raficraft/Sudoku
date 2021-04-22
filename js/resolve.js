@@ -34,8 +34,7 @@ class Resolve{
         const sudoku = new Sudoku(grid)
         sudoku.addEvent('valeur',(line,col,val)=>{
 
-          
-            if(val !== undefined){
+          console.error('valeur testé ' + val);
 
             // Récuperer le champs
             const cell = document.querySelector(`.game-value[data-coord="${line}-${col}"]`)
@@ -43,7 +42,7 @@ class Resolve{
             // Mettre à jour le champs
            
             cell.value = val
-            }
+            
         })
         sudoku.resolve()
 

@@ -14,7 +14,6 @@ export default class Sudoku{
            
             for(let col = 0 ; col < 9 ; col++ ){
                 const val = grid[line][col]
-                console.log(val);
                 const cell = new SudokuCell()
                 //Si la case à une valeur
                 if(val&&val !== ''){
@@ -29,7 +28,6 @@ export default class Sudoku{
         //Et pour chaque case
         //Sauvegarder la valeur
 
-        console.log(this.grid);
 
 
     }
@@ -60,7 +58,7 @@ export default class Sudoku{
                 
                     // Récupérer la prochaine valeur à tester
                     const val = cell.nextValue()
-console.error(val);
+                    console.error(val);
                     // Lancer l'évenements valeur
                     // Récupéerer la fonction à lancer
 
@@ -78,21 +76,18 @@ console.error(val);
                         console.log(this.isValid());
                         if(this.isValid()){
 
-                            console.log('avance');
                             // Arrêter les recherches
                             continueResearch = false
                             cursor.start = "forward"
 
                         }else{
                             console.log('WTF');
-                            continueResearch = true
                             // Si le sudoku comporte une erreur 
                             // Continuer les recherches
                         }
 
                     }else{
                         console.log('on recule');
-
                         // S'il n'y a plus de  possibilitées
                         // Arrêter les recherches
                         continueResearch = false
@@ -137,7 +132,6 @@ console.error(val);
 
                     const hasValid = liste.has(val)
                     if(hasValid){
-                        console.log(val);
                         console.log(`error ligne ${line}-${col}`);
                         return false
 
@@ -164,7 +158,6 @@ console.error(val);
                     const hasValid = liste.has(val)
                     if(hasValid){
                      
-                        console.log('error - colonne');
                         return false
 
                     }else{
@@ -242,7 +235,6 @@ console.error(val);
     
                         const hasValid = liste.has(val)
                         if(hasValid){
-                            console.log('error square');
                             return false
     
                         }else{
